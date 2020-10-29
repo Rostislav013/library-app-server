@@ -1,0 +1,85 @@
+[
+    {
+     "author": "Andrew Hunt, David Thomas ",
+        "statusProperty": [
+            {
+                "borrowerId": "dffv",
+                "borrowDate": "1970-05-05",
+                "returnDate": "1970-05-05"
+            }
+        ],
+        "categories": [
+            "Classics",
+            "Coding"
+        ],
+        
+        "isbn": 1781593279509,
+        "title": "The Pragmatic Programmer: From Journeyman to Master",
+        "description": "The book covers topics like an approach to software design and construction that allows profitable, efficient development of high-quality products",
+        "publisher": "Oy",
+        "isAvailable": false,
+        "publishedDate": 2018
+    },
+    {
+     "author": "Stepan, Olivia",
+        "statusProperty": [
+            {
+                "borrowerId": "ergerg",
+                "borrowDate": "1970-05-05",
+                "returnDate": "1970-05-05"
+            }
+        ],
+        "categories": [
+            "Fantasy",
+            "Horror"
+        ],
+        
+        "isbn": 1181593279509,
+        "title": "Scary title",
+        "description": "So scary",
+        "publisher": "Oy",
+        "isAvailable": true,
+        "publishedDate": 2000
+    },
+    {
+     "author": "Murzik",
+        "statusProperty": [
+            {
+                "borrowerId": "34r34efe",
+                "borrowDate": "1970-05-05",
+                "returnDate": "1970-05-05"
+            }
+        ],
+        "categories": [
+            "Literary Fiction"
+        ],
+        
+        "isbn": 2181593279509,
+        "title": "Fiction title",
+        "description": "So Literary Fiction",
+        "publisher": "Oy",
+        "isAvailable": true,
+        "publishedDate": 1991
+    },
+     {
+     "author": "Abai Kunanbaev",
+        "statusProperty": [
+            {
+                "borrowerId": "34r34efe",
+                "borrowDate": "1970-05-05",
+                "returnDate": "1970-05-05"
+            }
+        ],
+        "categories": [
+            "Short stories"
+        ],
+        
+        "isbn": 2141593279509,
+        "title": "Some cool title",
+        "description": "So wise book",
+        "publisher": "Oy",
+        "isAvailable": true,
+        "publishedDate": 1850
+    }
+
+]
