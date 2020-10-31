@@ -144,8 +144,14 @@ exports.findById = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
 });
 // GET /users
 exports.findAll = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const userAuth = req.user;
+    if (userAuth) {
+        // FIX
+    }
     try {
-        res.json(yield user_1.default.findAll());
+        //res.json(await UserService.findAll())
+        const updatedUser = yield user_1.default.findAll(userAuth);
+        res.json(updatedUser);
     }
     catch (error) {
         next(new apiError_1.NotFoundError('Users not found', error));

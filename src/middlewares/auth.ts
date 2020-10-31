@@ -1,9 +1,11 @@
+import { Request, Response, NextFunction } from 'express'
+
 import { secretOrKey } from '../config/keys'
 import jwt from 'jsonwebtoken'
 
-function auth(req: any, res: any, next: any) {
-    const token: string = req.header('auth-token')
-    
+function auth(req: Request, res: Response, next: NextFunction) {
+    const token: string | undefined = req.header('auth-token')
+    console.log(token)
     if (!token) {
         return res.status(401).json({
             msg: 'auth denied'

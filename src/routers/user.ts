@@ -1,5 +1,6 @@
 import express from 'express'
 import auth from '../middlewares/auth'
+import isAdmin from '../middlewares/isAdmin'
 
 import {
   findById,
@@ -13,7 +14,7 @@ import {
 const router = express.Router()
 
 // Every path we define here will get /api/v1/users prefix
-router.get('/', findAll)
+router.get('/', isAdmin, findAll)
 router.get('/:userId', findById)
 router.put('/:userId', auth, updateUser)
 router.delete('/:userId', deleteUser)

@@ -12,7 +12,6 @@ const passport_1 = __importDefault(require("passport"));
 const bluebird_1 = __importDefault(require("bluebird"));
 const secrets_1 = require("./util/secrets");
 const cors_1 = __importDefault(require("cors"));
-const movie_1 = __importDefault(require("./routers/movie"));
 const book_1 = __importDefault(require("./routers/book"));
 const user_1 = __importDefault(require("./routers/user"));
 const apiErrorHandler_1 = __importDefault(require("./middlewares/apiErrorHandler"));
@@ -34,7 +33,7 @@ mongoose_1.default
     process.exit(1);
 });
 // Express configuration
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3001);
 //// Passport middleware
 app.use(passport_1.default.initialize());
 // I don't remember what this is about, but probable for smooth converstatoin between client n server
@@ -49,8 +48,6 @@ app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
 app.use(lusca_1.default.xframe('SAMEORIGIN'));
 app.use(lusca_1.default.xssProtection(true));
-// Use movie router
-app.use('/api/v1/movies', movie_1.default);
 // Use book router
 app.use('/api/v1/books', book_1.default);
 // Use user router

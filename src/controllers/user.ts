@@ -162,14 +162,29 @@ export const findById = async (
   }
 }
 
+export type UserDecoded = {
+  id: string;
+  email: string;
+  admin: boolean;
+  firstName: string;
+  iat: number;
+  exp: number;
+}
 // GET /users
 export const findAll = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
+  const userAuth = req.user
+  if (userAuth) {
+    // FIX
+  }
   try {
-    res.json(await UserService.findAll())
+    //res.json(await UserService.findAll())
+
+    const updatedUser = await UserService.findAll(userAuth)
+    res.json(updatedUser)
   } catch (error) {
     next(new NotFoundError('Users not found', error))
   }

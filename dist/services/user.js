@@ -27,39 +27,46 @@ function findById(userId) {
         return user;
     });
 }
-function findAll() {
-    return User_1.default.find().sort({ firstName: 1 }).exec(); // Return a Promise
+function findAll(userAuth) {
+    if ((userAuth === null || userAuth === void 0 ? void 0 : userAuth.admin) === false) {
+        throw new Error('Denied');
+    }
+    else {
+        return User_1.default.find().sort({ firstName: 1 }).exec(); // Return a Promise
+    }
 }
 function update(userId, update, userAuth) {
-    console.log(userAuth);
+    // console.log(userAuth)
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let pass = update.password;
-    pass && bcryptjs_1.default.genSalt(10, (err, salt) => {
-        bcryptjs_1.default.hash(pass, salt, (err, hash) => __awaiter(this, void 0, void 0, function* () {
-            if (err)
-                throw err;
-            pass = hash;
-            console.log('hash', pass);
-        }));
-    });
+    pass &&
+        bcryptjs_1.default.genSalt(10, (err, salt) => {
+            bcryptjs_1.default.hash(pass, salt, (err, hash) => __awaiter(this, void 0, void 0, function* () {
+                if (err)
+                    throw err;
+                pass = hash;
+                //console.log('hash', pass)
+            }));
+        });
     return User_1.default.findById(userId)
         .exec()
         .then((user) => __awaiter(this, void 0, void 0, function* () {
-        console.log(userAuth === null || userAuth === void 0 ? void 0 : userAuth.id);
-        console.log(user === null || user === void 0 ? void 0 : user._id);
+        // console.log(userAuth?.id)
+        // console.log(user?._id)
         if (!user) {
             throw new Error(`User ${userId} not found`);
         }
-        if (user._id != (userAuth === null || userAuth === void 0 ? void 0 : userAuth.id) && (userAuth === null || userAuth === void 0 ? void 0 : userAuth.admin) == false) {
+        if (user._id != (userAuth === null || userAuth === void 0 ? void 0 : userAuth.id) && (userAuth === null || userAuth === void 0 ? void 0 : userAuth.admin) === false) {
             throw new Error('Denied');
         }
-        if ((user === null || user === void 0 ? void 0 : user._id) == (userAuth === null || userAuth === void 0 ? void 0 : userAuth.id) || (userAuth === null || userAuth === void 0 ? void 0 : userAuth.admin) == true) {
+        if ((user === null || user === void 0 ? void 0 : user._id) == (userAuth === null || userAuth === void 0 ? void 0 : userAuth.id) || (userAuth === null || userAuth === void 0 ? void 0 : userAuth.admin) === true) {
             if (update.admin) {
                 user.admin = update.admin;
             }
             if (update.password && update.currentPassword) {
-                //user.password = pass
-                yield bcryptjs_1.default.compare(update.currentPassword, user.password).then((result) => {
+                yield bcryptjs_1.default
+                    .compare(update.currentPassword, user.password)
+                    .then((result) => {
                     console.log(result);
                     if (result) {
                         console.log('gonna change pass');

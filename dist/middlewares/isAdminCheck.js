@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const keys_1 = require("../config/keys");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-function auth(req, res, next) {
+function isAdmin(req, res, next) {
     const token = req.header('auth-token');
     console.log(token);
     if (!token) {
@@ -23,5 +23,5 @@ function auth(req, res, next) {
         res.status(400).json({ msg: 'token not valid' });
     }
 }
-exports.default = auth;
-//# sourceMappingURL=auth.js.map
+exports.default = isAdmin;
+//# sourceMappingURL=isAdminCheck.js.map
