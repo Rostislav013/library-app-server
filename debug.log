@@ -5430,3 +5430,15 @@
 {"message":"Using .env file to supply config environment variables","level":"debug"}
 {"message":"Logging initialized at debug level","level":"debug"}
 {"message":"Using .env file to supply config environment variables","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"message":"Cast to ObjectId failed for value \"undefined\" at path \"_id\" for model \"User\"","name":"CastError","level":"error"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"message":"Cast to ObjectId failed for value \"undefined\" at path \"_id\" for model \"User\"","name":"CastError","level":"error"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"message":"Cast to ObjectId failed for value \"undefined\" at path \"_id\" for model \"User\"","name":"CastError","level":"error"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"message":"Cast to ObjectId failed for value \"undefined\" at path \"_id\" for model \"User\"","name":"CastError","level":"error"}
+{"stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","reason":{},"message":"Cast to ObjectId failed for value \"undefined\" at path \"_id\" for model \"User\"","name":"CastError","level":"error"}
+{"message":"No matching document found for id \"5f91c0c66ba5f6073bfbe4c5\" version 5 modifiedPaths \"booksProperties\"","name":"VersionError","version":5,"modifiedPaths":["booksProperties"],"level":"error"}

@@ -16,6 +16,7 @@ const book_1 = __importDefault(require("./routers/book"));
 const user_1 = __importDefault(require("./routers/user"));
 const apiErrorHandler_1 = __importDefault(require("./middlewares/apiErrorHandler"));
 const app = express_1.default();
+app.use(express_1.default.static('buildClient'));
 const mongoUrl = secrets_1.MONGODB_URI;
 app.use(cors_1.default());
 mongoose_1.default.Promise = bluebird_1.default;

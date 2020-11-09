@@ -16,8 +16,6 @@ import apiErrorHandler from './middlewares/apiErrorHandler'
 
 const app = express()
 
-app.use(express.static('build'))
-
 const mongoUrl = MONGODB_URI
 
 app.use(cors())
