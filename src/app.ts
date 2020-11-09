@@ -9,13 +9,15 @@ import bluebird from 'bluebird'
 import { MONGODB_URI } from './util/secrets'
 import cors from 'cors'
 
-
 import bookRouter from './routers/book'
 import userRouter from './routers/user'
 
 import apiErrorHandler from './middlewares/apiErrorHandler'
 
 const app = express()
+
+app.use(express.static('build'))
+
 const mongoUrl = MONGODB_URI
 
 app.use(cors())
@@ -59,7 +61,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(lusca.xframe('SAMEORIGIN'))
 app.use(lusca.xssProtection(true))
-
 
 // Use book router
 app.use('/api/v1/books', bookRouter)
