@@ -1,12 +1,12 @@
 {
-  "name": "express-typescript-starter",
-  "version": "0.1.0",
-  "description": "A starting point for Node.js express apps with TypeScript",
+  "name": "library-app",
+  "version": "1.0.0",
+  "description": "Server for library App",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/TypeScript-Node-Starter"
+    "url": "https://github.com/Rostislav013/library-app-server"
   },
-  "author": "Bowden Kelly",
+  "author": "Rostislav Petrenko",
   "license": "MIT",
   "scripts": {
     "start": "npm run serve",
