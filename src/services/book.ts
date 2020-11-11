@@ -1,7 +1,6 @@
 import Book, { BookDocument } from '../models/Book'
 
 function create(book: BookDocument): Promise<BookDocument> {
-  
   return book.save()
 }
 
@@ -73,7 +72,6 @@ type Params = {
 }
 
 function findByQuery(params: Params): Promise<BookDocument[]> {
- // console.log('params from service', params)
   params.author
     ? (params.author = { $regex: params.author, $options: 'i' })
     : params.author

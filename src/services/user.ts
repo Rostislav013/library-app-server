@@ -16,7 +16,7 @@ function create(user: UserDocument) {
 
 function findById(userId: string): Promise<UserDocument> {
   return User.findById(userId)
-    .exec() // .exec() will return a true Promise
+    .exec()
     .then((user) => {
       if (!user) {
         throw new Error(`User ${userId} not found`)
@@ -42,7 +42,6 @@ function update(
   update: Update,
   userAuth?: Partial<userAuth>
 ): Promise<UserDocument> {
-  // console.log(userAuth)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let pass: any = update.password
   pass &&
@@ -50,15 +49,12 @@ function update(
       bcrypt.hash(pass, salt, async (err, hash) => {
         if (err) throw err
         pass = hash
-        //console.log('hash', pass)
       })
     })
 
   return User.findById(userId)
     .exec()
     .then(async (user) => {
-      // console.log(userAuth?.id)
-      // console.log(user?._id)
       if (!user) {
         throw new Error(`User ${userId} not found`)
       }
@@ -97,9 +93,7 @@ function update(
         if (update.booksProperties) {
           user.booksProperties = update.booksProperties
         }
-        // Add more fields here if needed
       }
-      console.log('return')
       return user.save()
     })
 }

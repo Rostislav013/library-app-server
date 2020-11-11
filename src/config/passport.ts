@@ -1,13 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
-// import passport from 'passport'
-// import passportLocal from 'passport-local'
-// import passportFacebook from 'passport-facebook'
-
-// import { Request, Response, NextFunction } from 'express'
-
-// const LocalStrategy = passportLocal.Strategy
-// const FacebookStrategy = passportFacebook.Strategy
-
 import passportJWT from 'passport-jwt'
 import passport from 'passport'
 
@@ -25,9 +15,11 @@ passport.use(
       secretOrKey: key,
     },
     (
+      // eslint-disable-next-line @typescript-eslint/camelcase
       jwt_payload: { id: string },
       done: (arg0: null, arg1: boolean | UserDocument) => void // void?
     ) => {
+      // eslint-disable-next-line @typescript-eslint/camelcase
       User.findById(jwt_payload.id)
         .then((user) => {
           if (user) {

@@ -5,13 +5,11 @@ import lusca from 'lusca'
 import mongoose from 'mongoose'
 import passport from 'passport'
 import bluebird from 'bluebird'
-
-import { MONGODB_URI } from './util/secrets'
 import cors from 'cors'
 
+import { MONGODB_URI } from './util/secrets'
 import bookRouter from './routers/book'
 import userRouter from './routers/user'
-
 import apiErrorHandler from './middlewares/apiErrorHandler'
 
 const app = express()

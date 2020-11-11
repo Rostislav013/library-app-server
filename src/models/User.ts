@@ -43,7 +43,7 @@ const userSchema = new mongoose.Schema({
   },
 
   booksProperties: {
-    type: Array, // ?
+    type: Array,
     bookId: {
       type: String,
     },
